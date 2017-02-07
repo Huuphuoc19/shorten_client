@@ -4,6 +4,8 @@
 shorten.factory("Helper", function ($http) {
 	return {
 		getUrl: function(stringUrl){
+			if(stringUrl == null)
+				return null;
 			var parser = document.createElement('a');
 			parser.href = stringUrl;
 			return parser;

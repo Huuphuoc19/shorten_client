@@ -7,10 +7,15 @@ var originUrl = {
 	href: window.location.href,
 	origin: window.location.origin
 }
+
+
 var shorten = angular.module("shorten", ["ui.router","chart.js"]);
 
 var domain = window.location.origin + "/#/"
-var serverHost = 'http://103.53.231.8:3000/';
+
+var referrer = (document.referrer) ? (document.referrer) : null;
+
+var serverHost = 'http://localhost:3000/';
 
 shorten.factory("ApiHandling", function ($http, $q) {
 	return {
@@ -29,8 +34,8 @@ shorten.factory("ApiHandling", function ($http, $q) {
             return deferred.promise;
         },
         // api redirect link
-        getFullLink: function(shortCode){
-        	var dataToServer = {link: shortCode}
+        getFullLink: function(shortCode,referrerUrl){
+        	var dataToServer = {link: shortCode, referrer: referrerUrl}
 			dataToServer = JSON.stringify(dataToServer);
             var deferred = $q.defer();
 		    $http.post(serverHost + "shorten/redirect", dataToServer)

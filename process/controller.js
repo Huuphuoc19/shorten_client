@@ -31,14 +31,25 @@ shorten.controller("indexController", function ($scope,ApiHandling,Helper){
 });
 
 // redirect controller
-shorten.controller("redirectController", function ($scope,$window,ApiHandling){
+shorten.controller("redirectController", function ($scope,$window,ApiHandling,Helper){
     var vm = this;
     var shortCode = originUrl.href.substring(originUrl.origin.length + 3);
+    //redirect to index
     if(shortCode == ""){
         $window.location.href = domain + "index";
     }
     else{
-        ApiHandling.getFullLink(shortCode)
+        var reUrl = null;
+        var parser = Helper.getUrl(referrer);
+        if(parser != null){
+            reUrl = parser.protocol + "//" + parser.hostname;
+            // if rerferr from client side
+            // if((reUrl + "/#/") == domain){
+            //     reUrl = null;
+            // }
+        }
+
+        ApiHandling.getFullLink(shortCode,reUrl)
         .then(function(data){
             if(data.longlink != -1){
                 $window.location.href = data.longlink;
