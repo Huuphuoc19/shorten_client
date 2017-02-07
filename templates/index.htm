@@ -1,0 +1,192 @@
+<div class="stage">
+	<header id="header" data-template="stage-header">
+		<div id="header-inner">
+			<div class="container container-pod container-pod-short">
+				<h1 class="header-logo">
+					<a href="/" rel="nofollow"></a>
+				</h1>
+				 <nav class="navigation" role="navigation">
+					<ul>
+						<li>
+							<a href="/pages/tour">{{ 2 	+ 3 }}</a>
+						</li>
+						<li>
+							<a href="/pages/enterprise">Enterprise</a>
+						</li>
+						<li>
+							<a href="/pages/resources">Resources</a>
+						</li>
+						<li>
+							<a href="/blog/">Blog</a>
+						</li>
+						<li>
+							<a href="/pages/about">About</a>
+						</li>
+					</ul>
+				</nav> 
+				<!--<div class="header-button-wrapper">
+					<a class="header-login" href="/a/sign_in">Login</a>
+					<a class="header-signup" href="/a/sign_up">Sign Up</a>
+				</div>
+				<div class="mobile-sign-in">
+					<a class="login" href="/a/sign_in">Login</a>
+					<a class="signup" href="/a/sign_up">Sign Up</a>
+					<a id="header-mobile-menu-button" href="#">
+						<i class="icon-menu-open"></i>
+					</a>
+				</div>-->
+			</div>
+		</div>
+	</header>
+	<div id="container" class="clearfix">
+		<div class="container container-pod shorten-container">
+			<h1 class="page-title t-center">SHORTEN ME</h1>
+			<div class="join-bitly t-center">Measure your links with Bitly, the world's leading link management platform.</div>
+			<!--<div class="signup-learn-more-mobile t-center mid-container">
+				<a href="/a/sign_in" class="header-login">Login</a>
+				<a class="header-login no-right-margin" href="/a/sign_up">Sign Up For Free</a>
+			</div>-->
+			<div id="form_container" class="t-center mid-container foot-room">
+				<form name="shortenUrl" id="unAuthShortenForm">
+					<fieldset class="cf">
+						<input id="shorten_url" ng-model="indexCtrl.longLink" taborder="1" name="url" type="url" class="shorten-input" placeholder="Paste a link to shorten it" value="" autocomplete="off" autocorrect="off" autocapitalize="off" />
+						<input id="shorten_btn" ng-click="indexCtrl.makeShorten()"type="button" class="button button-primary button-large shorten-button" value="Shorten" />
+					</fieldset>
+				</form>
+				<div id="shorten_actions"></div>
+			</div>
+
+			<div class="link-container mid-container">
+			<div id="shortened_info">
+			    <ul id="most_recent_link" class="anon_history footroom">
+			        <li id="1eMuJXl" class="shortened_link" data-user_hash="1eMuJXl" data-short_link="http://bit.ly/1eMuJXl" style="display: list-item; opacity: 1; overflow: hidden;">
+			            <div class="unauth-title">
+			                <a class="article-title" href="{{ indexCtrl.longLink }}">{{ indexCtrl.longLinkTitle }}</a>
+			            </div>
+			            <div class="unauth-title-url">
+			                <a class="article-title smaller" href="{{ indexCtrl.longLink }}">{{ indexCtrl.longLinkOrigin }}</a>
+			            </div>
+			            <div class="unauth_capsule clearfix">
+			                <a class="short-url" target="_blank" href="{{ indexCtrl.shortLink }}">{{ indexCtrl.shortLink }}</a>
+			                <input class="copy-input" value="http://bit.ly/1eMuJXl" tabindex="-1" readonly="">
+			                <a ng-click="indexCtrl.makeCopy()" class="copy button primary">Copy</a>
+			            </div>
+			        </li>
+			    </ul>
+			</div>
+			</div>
+
+			<div class="link-container mid-container">
+				<div id="shortened_info">
+					<ul id="most_recent_link" class="anon_history footroom"></ul>
+				</div>
+				<div>
+					<ul id="anon_history" class="anon_history"></ul>
+				</div>
+			</div>
+		</div>
+		<div id="bottom">
+			<form action="" method="get">
+				<input type="hidden" name="_xsrf" value="f799c2cbc9de4aafa21ae166965b2501"/>
+			</form>
+		</div>
+	</div>
+
+	<div id="page-home-link-shortener" class="stage-pod stage-pod-dark">
+		<div class="container container-pod">
+			<div id="page-home-link-shortener-counter"></div>
+		</div>
+	</div>
+
+	<footer id="footer" role="contentinfo" data-template="stage-footer">
+		<section class="stage-pod">
+			<div class="container container-pod t-center">
+				<div class="footer-links">
+					<ul id="menu-footer-menu" class="nav footer-nav clearfix">
+						<li>
+							<a href="http://blog.bitly.com/">Blog</a>
+						</li>
+						<li>
+							<a href="http://support.bitly.com/">Support</a>
+						</li>
+						<li>
+							<a href="/pages/contact">Contact</a>
+						</li>
+						<li>
+							<a href="http://dev.bitly.com">Developers</a>
+						</li>
+						<li>
+							<a href="/pages/privacy">Privacy Policy</a>
+						</li>
+						<li>
+							<a href="/pages/terms-of-service">Terms Of Service</a>
+						</li>
+						<li>
+							<a href="/pages/partners">Partners</a>
+						</li>
+						<li>
+							<a href="/pages/careers">Careers</a>
+						</li>
+					</ul>
+				</div>
+				<div class="footer-attribution">
+					<a href="../../" class="footer-logo"></a>
+				</div>
+				<ul class="footer-social-links">
+					<li class="footer-social-link footer-social-link-facebook">
+						<a href="http://www.facebook.com/bitly" target="_blank"></a>
+					</li>
+					<li class="footer-social-link footer-social-link-twitter">
+						<a href="http://twitter.com/bitly" target="_blank"></a>
+					</li>
+					<li class="footer-social-link footer-social-link-linkedin">
+						<a href="http://www.linkedin.com/company/552285" target="_blank"></a>
+					</li>
+					<li class="footer-social-link footer-social-link-instagram">
+						<a href="http://instagram.com/bitly" target="_blank"></a>
+					</li>
+				</ul>
+				<div class="footer-attribution">
+					<p class="small source-org copyright flush-bottom">
+						&copy; 2017 Shorten.me &nbsp;&nbsp;
+						</p>
+				</div>
+			</div>
+		</section>
+	</footer>
+</div>
+<div id="stage-sidebar">
+	<div id="stage-sidebar-scrollable" class="container-scrollable ps-container">
+		<div class="container container-pod container-pod-short">
+			<ul id="menu-mobile-menu" class="nav top-nav clearfix">
+				<li>
+					<a href="/">Home</a>
+				</li>
+				<li>
+					<a href="/pages/tour">Tour</a>
+				</li>
+				<li>
+					<a href="/pages/enterprise">Enterprise</a>
+				</li>
+				<li>
+					<a href="/pages/resources">Resources</a>
+				</li>
+				<li>
+					<a href="/pages/about">Company</a>
+				</li>
+				<li>
+					<a href="/pages/contact">Contact</a>
+				</li>
+				<li>
+					<a href="/pages/careers">Careers</a>
+				</li>
+				<li>
+					<a href="/pages/press">Press Room</a>
+				</li>
+				<li>
+					<a href="/pages/partners">Partners</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
