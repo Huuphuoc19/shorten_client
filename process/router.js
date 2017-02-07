@@ -15,16 +15,6 @@ shorten.config(function ($stateProvider, $urlRouterProvider, $locationProvider) 
            
         }
     })
-    .state("statistic",{
-    	 url: "/statistic",
-        templateUrl: "templates/statistic.htm",
-        controller: "statisticController",
-        controllerAs: "statisticCtrl",
-        // 
-        resolve: {
-           
-        }
-    })
     .state("redirect",{
         url: "/redirect",
         templateUrl: "templates/redirect.htm",
@@ -34,4 +24,5 @@ shorten.config(function ($stateProvider, $urlRouterProvider, $locationProvider) 
            
         }
     });
+    //$locationProvider.html5Mode(true);
 });

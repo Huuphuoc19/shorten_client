@@ -10,10 +10,18 @@
 
 		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 	    <script src="js/bootstrap.min.js"></script>
+	    <!-- angular js -->
 	    <script type="text/javascript" src="js/angular.min.js"></script>
+	    <!-- ui route for angular -->
 	    <script type="text/javascript" src="js/angular-ui-router.min.js"></script>
 
+	    <!--chart js -->
+	    <script src="node_modules/chart.js/dist/Chart.min.js"></script>
+		<script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>	
+
+		<!-- process -->
 	    <script type="text/javascript" src="process/storage.js"></script>
+	    <script type="text/javascript" src="process/filter.js"></script>
 	    <script type="text/javascript" src="process/router.js"></script>
 		<script type="text/javascript" src="process/controller.js"></script>
 		<script type="text/javascript" src="process/helper.js"></script>
@@ -21,6 +29,7 @@
 		<link href="css/style.css" rel="stylesheet" type="text/css">
 	</head>
 	<body class="" ng-app="shorten">
+		<!--  view -->
 		<ui-view></ui-view>
 	</body>
 </html>
