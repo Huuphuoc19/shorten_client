@@ -2,7 +2,7 @@
 // index contrller
 shorten.controller("indexController", function ($scope,ApiHandling,Helper){
     var vm = this;
-
+    vm.totalLinks;
 
     // make short link when user click 
     vm.makeShorten = function(){
@@ -13,21 +13,32 @@ shorten.controller("indexController", function ($scope,ApiHandling,Helper){
         if(longLink){
             ApiHandling.makeShortLink(longLink)
             .then(function(data){
-                dump(data);
                 var url = Helper.getUrl(longLink);
                 vm.shortLink = domain + data.link;
                 vm.longLinkTitle = Helper.removeProtocol(longLink);
                 vm.longLinkOrigin = url.hostname;
                 info.slideDown();
+                // new link
+                ApiHandling.getTotalShortLink()
+                .then(function(data){
+                    vm.totalLinks = data.total_links;
+                },function(err){
+                    dump(err);
+                });
+
             },function(err){
                 dump(err);
             });
         }
     }
-    // make copy
-    vm.makeCopy = function(){
-        
-    }
+    
+    ApiHandling.getTotalShortLink()
+    .then(function(data){
+        vm.totalLinks = data.total_links;
+    },function(err){
+        dump(err);
+    });
+
     var temp = new Clipboard('.copy');
 
 });

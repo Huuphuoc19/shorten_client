@@ -46,8 +46,7 @@
 			            </div>
 			            <div class="unauth_capsule clearfix">
 			                <a class="short-url" target="_blank" href="{{ indexCtrl.shortLink }}">{{ indexCtrl.shortLink | rmvProtocol}}</a>
-			                <input id="copy-input"  value="{{ indexCtrl.shortLink }}" tabindex="-1" readonly="" style="display: none;">
-			                <a ng-click="indexCtrl.makeCopy()" class="copy button primary" data-clipboard-target="#copy-input">Copy</a>
+			                <a ng-click="indexCtrl.makeCopy()" class="copy button primary" data-clipboard-text="{{ indexCtrl.shortLink }}">Copy</a>
 			            </div>
 			        </li>
 			    </ul>
@@ -71,8 +70,13 @@
 	</div>
 
 	<div id="page-home-link-shortener" class="stage-pod stage-pod-dark">
-		<div class="container container-pod">
-			<div id="page-home-link-shortener-counter"></div>
+		<div class="container container-pod" style="padding-top: 40px;padding-bottom: 15px">
+			<div id="page-home-link-shortener-counter" style="color: #ee6123; font-size: 3em; margin-bottom: 20px;">
+				{{ indexCtrl.totalLinks }}
+			</div>
+			<div class="row">
+				<h2 class="centered counter-header">LINKS POWERED BY SHORTME</h2>
+			</div>
 		</div>
 	</div>
 

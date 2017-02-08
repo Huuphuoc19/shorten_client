@@ -61,6 +61,18 @@ shorten.factory("ApiHandling", function ($http, $q) {
 			});
             return deferred.promise;
        	},
+       	// get total links is shorted
+       	getTotalShortLink: function(){
+            var deferred = $q.defer();
+		    $http.get(serverHost + "statistic/totalshortlink")
+		    .success(function(data, status, headers, config) {		
+				deferred.resolve(data);
+			})
+			.error(function(data, status, headers, config) {
+				deferred.resolve(data);
+			});
+            return deferred.promise;
+       	},
        	//get all bit link for click
        	getTotalLastDays: function(id,days){
        		var dataToServer = {
