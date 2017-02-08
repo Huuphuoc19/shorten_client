@@ -25,6 +25,7 @@
       <script type="text/javascript" src="process/controller.js"></script>
       <script type="text/javascript" src="process/helper.js"></script>
 		<link href="css/statistic_style.css" rel="stylesheet" type="text/css">
+      <script type="text/javascript" src="node_modules/clipboard/dist/clipboard.min.js"></script>
 	
 	</head>
 	<body class="" ng-app="shorten" ng-controller="statisticController">
@@ -34,7 +35,7 @@
             <div class="layout--primary-section" >
                <nav class="navigation--ALTERNATE" >
                   <a href="/statistic.html" >
-                     <span class="bitly-icon" alt="bitly-icon" ></span>
+                     <img src="img/shorten.png" style="width: 8%; height: auto;margin-left: 1em;" />
                   </a>
                   <span class="navigation--header" >
                      <span >Shorten.me</span>
@@ -65,7 +66,7 @@
                               <label for="2jUhWKv" class="checkmark-icon checkbox-icon"></label>
                            </div>
                         </span>
-                        <time class="bitlink-item--created-date" datetime="2017-02-06">{{ link.create_time |date: 'MMM dd' }}</time>
+                        <time class="bitlink-item--created-date" datetime="{{ link.create_time |date: 'dd-MM-yyyy' }}">{{ link.create_time |date: 'MMM dd' }}</time>
                         <div class="bitlink-item--title">{{link.longlink | rmvProtocol}}</div>
                         <div>
                            <div class="bitlink--MAIN" tabindex="-1">
@@ -107,9 +108,7 @@
                               </div>
                            </a>
                            <div class="item--action-buttons">
-                              <button class="button--ACTION" type="button" data-clipboard-text="http://bit.ly/2jUhWKv">COPY</button>
-                              <button class="button--ACTION" type="button">SHARE</button>
-                              <button class="button--ACTION" type="button">EDIT</button>
+                              <button class="btn-copy button--ACTION"  data-clipboard-text="{{ domain + selectedInfo.shortcode }}" type="button">COPY</button>
                            </div>
                         </div>
                      </div>

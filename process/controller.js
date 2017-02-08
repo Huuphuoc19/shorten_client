@@ -3,6 +3,7 @@
 shorten.controller("indexController", function ($scope,ApiHandling,Helper){
     var vm = this;
 
+
     // make short link when user click 
     vm.makeShorten = function(){
         var info = $("#shortened_info");
@@ -27,6 +28,7 @@ shorten.controller("indexController", function ($scope,ApiHandling,Helper){
     vm.makeCopy = function(){
         
     }
+    var temp = new Clipboard('.copy');
 
 });
 
@@ -142,4 +144,5 @@ shorten.controller("statisticController", function ($scope,ApiHandling,Helper,da
         });
 
     }  
+    var temp = new Clipboard(".btn-copy");
 });

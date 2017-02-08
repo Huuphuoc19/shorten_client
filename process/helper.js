@@ -20,6 +20,7 @@ shorten.factory("Helper", function ($http) {
 				total += arr[i];
 			}
 			return total;
-		}
+		},
+		
 	}
 });

@@ -46,8 +46,8 @@
 			            </div>
 			            <div class="unauth_capsule clearfix">
 			                <a class="short-url" target="_blank" href="{{ indexCtrl.shortLink }}">{{ indexCtrl.shortLink | rmvProtocol}}</a>
-			                <input class="copy-input" value="http://bit.ly/1eMuJXl" tabindex="-1" readonly="">
-			                <a ng-click="indexCtrl.makeCopy()" class="copy button primary">Copy</a>
+			                <input id="copy-input"  value="{{ indexCtrl.shortLink }}" tabindex="-1" readonly="" style="display: none;">
+			                <a ng-click="indexCtrl.makeCopy()" class="copy button primary" data-clipboard-target="#copy-input">Copy</a>
 			            </div>
 			        </li>
 			    </ul>
